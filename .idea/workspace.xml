@@ -771,12 +771,20 @@
       <updated>1506667107620</updated>
       <workItem from="1506667113744" duration="4608000" />
       <workItem from="1506677166217" duration="246000" />
-      <workItem from="1506700629232" duration="173000" />
+      <workItem from="1506700629232" duration="212000" />
     </task>
+    <task id="LOCAL-00001" summary="try to fetch java folder">
+      <created>1506700841603</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1506700841603</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4872000" />
+    <option name="totallyTimeSpent" value="4911000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -846,6 +854,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="try to fetch java folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="try to fetch java folder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
