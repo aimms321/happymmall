@@ -1,7 +1,6 @@
 package com.happymmall.common;
 
 
-import org.apache.ibatis.javassist.runtime.Desc;
 
 public enum ResponseCode {
     SUCCESS(0, "SUCCESS"),

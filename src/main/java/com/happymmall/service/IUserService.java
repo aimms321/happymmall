@@ -1,5 +1,8 @@
 package com.happymmall.service;
 
+import com.happymmall.common.ServerResponse;
+import com.happymmall.pojo.User;
+
 public interface IUserService {
-    Object login(String username, String password);
+    ServerResponse<User> login(String username, String password);
 }
