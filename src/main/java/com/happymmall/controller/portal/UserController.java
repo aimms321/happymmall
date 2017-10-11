@@ -1,5 +1,10 @@
 package com.happymmall.controller.portal;
 
+import com.happymmall.common.Const;
+import com.happymmall.common.ServerResponse;
+import com.happymmall.pojo.User;
+import com.happymmall.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,16 +16,37 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/user/")
 public class UserController {
+    @Autowired
+    private IUserService iUserService;
+
     /**
      * 用户登录
+     *
      * @param username
      * @param password
-     * @param httpsession
+     * @param session
      * @return
      */
-    @RequestMapping(value = "login.do",method = RequestMethod.POST)
+
+    @RequestMapping(value = "login.do", method = RequestMethod.POST)
     @ResponseBody
-    public Object login(String username, String password, HttpSession httpsession) {
-        return null;
+    public ServerResponse<User> login(String username, String password, HttpSession session) {
+        ServerResponse<User> response = iUserService.login(username, password);
+        if (response.isSuccess() == true) {
+            session.setAttribute(Const.CURRENT_USER, response.getData());
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "logout.do", method = RequestMethod.GET)
+    @ResponseBody
+    public ServerResponse<String> logout(HttpSession session) {
+        session.removeAttribute(Const.CURRENT_USER);
+        return ServerResponse.createBySuccess();
+    }
+
+    public ServerResponse<String> register(User user) {
+
     }
 }
+

@@ -1,6 +1,7 @@
 package com.happymmall.dao;
 
 import com.happymmall.pojo.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
@@ -16,4 +17,6 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     int checkUsername(String username);
+
+    User selectLogin(@Param("username") String username, @Param("password") String password);
 }
