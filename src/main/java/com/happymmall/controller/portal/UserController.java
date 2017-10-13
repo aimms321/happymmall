@@ -44,9 +44,15 @@ public class UserController {
         session.removeAttribute(Const.CURRENT_USER);
         return ServerResponse.createBySuccess();
     }
-
+    @RequestMapping(value = "register.do", method = RequestMethod.POST)
+    @ResponseBody
     public ServerResponse<String> register(User user) {
-
+        return iUserService.register(user);
+    }
+    @RequestMapping(value = "checkVaild.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<String> checkVaild(String str,String type) {
+        return iUserService.checkVaild(str, type);
     }
 }
 

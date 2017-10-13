@@ -155,6 +155,10 @@
     select count(1) from mmall_user
     where username=#{username}
   </select>
+  <select id="checkEmail" parameterType="String" resultType="int">
+    SELECT count(1) from mmall_user
+    where email=#{email}
+  </select>
   <select id="selectLogin" parameterMap="map" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"/>
