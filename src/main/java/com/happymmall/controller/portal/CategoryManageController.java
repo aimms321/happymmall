@@ -2,6 +2,7 @@ package com.happymmall.controller.portal;
 
 import com.happymmall.common.Const;
 import com.happymmall.common.ServerResponse;
+import com.happymmall.pojo.Category;
 import com.happymmall.pojo.User;
 import com.happymmall.service.ICategoryService;
 import com.happymmall.service.IUserService;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/manage/category")
@@ -50,4 +52,31 @@ public class CategoryManageController {
             return ServerResponse.createByErrorMessage("无权限操作，需要管理员权限");
         }
     }
+
+    @RequestMapping("get_category.do")
+    @ResponseBody
+    public ServerResponse<List<Category>> getChildrenParallelCategory(HttpSession session, @RequestParam(value = "categoryId",defaultValue = "0")Integer categoryId) {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if (user == null) {
+            return ServerResponse.createByErrorCodeMessage(10, "用户未登录，请登录");
+        }
+        if (iUserService.checkAdminRole(user).isSuccess()) {
+            return iCategoryService.getChildrenParallelCategory(categoryId);
+        } else {
+            return ServerResponse.createByErrorMessage("无权限操作，需要管理员");
+        }
+    }
+
+    public ServerResponse<List<Category>> getCategoryAndDeepChildrenCategory(HttpSession session, @RequestParam(value = "categoryId",defaultValue = "0")Integer categoryId) {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if (user == null) {
+            return ServerResponse.createByErrorCodeMessage(10, "用户未登录，请登录");
+        }
+        if (iUserService.checkAdminRole(user).isSuccess()) {
+            return iCategoryService.selectCategoryAndChildrenById(categoryId);
+        } else {
+            return ServerResponse.createByErrorMessage("无权限操作，需要管理员");
+        }
+    }
+
 }
