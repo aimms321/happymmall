@@ -21,6 +21,7 @@ import java.util.Set;
 public class CategoryServiceImpl implements ICategoryService {
 
     private Logger logger = LoggerFactory.getLogger(CategoryServiceImpl.class);
+
     @Autowired
     private CategoryMapper categoryMapper;
 
@@ -56,7 +57,7 @@ public class CategoryServiceImpl implements ICategoryService {
         return ServerResponse.createByErrorMessage("更新品类名字失败");
     }
 
-    public ServerResponse getChildrenParallelCategory(Integer categoryId) {
+    public ServerResponse<List<Category>> getChildrenParallelCategory(Integer categoryId) {
         List<Category> categoryList = categoryMapper.selectCategoryListByParentId(categoryId);
         if (CollectionUtils.isEmpty(categoryList)) {
             logger.info("未找到当前分类的子分类");
@@ -64,12 +65,14 @@ public class CategoryServiceImpl implements ICategoryService {
         return ServerResponse.createBySuccess(categoryList);
     }
 
-    public ServerResponse selectCategoryAndChildrenById(Integer categoryId) {
+    public ServerResponse<List<Integer>> selectCategoryAndChildrenById(Integer categoryId) {
         Set<Category> categorySet = Sets.newHashSet();
         findChildCategory(categorySet, categoryId);
         List<Integer> categoryIdList = Lists.newArrayList();
-        for (Category categoryItem : categorySet) {
-            categoryIdList.add(categoryItem.getId());
+        if(categoryId != null){
+            for(Category categoryItem : categorySet){
+                categoryIdList.add(categoryItem.getId());
+            }
         }
         return ServerResponse.createBySuccess(categoryIdList);
     }

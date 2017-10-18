@@ -1,6 +1,7 @@
-package com.happymmall.controller.portal;
+package com.happymmall.controller.backend;
 
 import com.happymmall.common.Const;
+import com.happymmall.common.ResponseCode;
 import com.happymmall.common.ServerResponse;
 import com.happymmall.pojo.Category;
 import com.happymmall.pojo.User;
@@ -9,6 +10,7 @@ import com.happymmall.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -21,15 +23,16 @@ public class CategoryManageController {
 
     @Autowired
     private IUserService iUserService;
+    @Autowired
     private ICategoryService iCategoryService;
 
-    @RequestMapping("add_category.do")
+    @RequestMapping(value = "add_category.do",method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse addCategory(HttpSession session, String categoryName, @RequestParam(value = "parentId", defaultValue = "0") int parentId) {
 
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
-            return ServerResponse.createByErrorCodeMessage(10, "用户未登录，请登录");
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "用户未登录，请登录");
         }
         if (iUserService.checkAdminRole(user).isSuccess()) {
             return iCategoryService.addCategory(categoryName, parentId);
@@ -39,12 +42,12 @@ public class CategoryManageController {
 
     }
 
-    @RequestMapping("set_category_name.do")
+    @RequestMapping(value = "set_category_name.do",method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse setCategoryName(HttpSession session, Integer categoryId, String categoryName) {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
-            return ServerResponse.createByErrorCodeMessage(10, "用户未登录，请登录");
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "用户未登录，请登录");
         }
         if (iUserService.checkAdminRole(user).isSuccess()) {
             return iCategoryService.updateCategoryName(categoryId, categoryName);
@@ -53,12 +56,12 @@ public class CategoryManageController {
         }
     }
 
-    @RequestMapping("get_category.do")
+    @RequestMapping(value = "get_category.do",method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse<List<Category>> getChildrenParallelCategory(HttpSession session, @RequestParam(value = "categoryId",defaultValue = "0")Integer categoryId) {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
-            return ServerResponse.createByErrorCodeMessage(10, "用户未登录，请登录");
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "用户未登录，请登录");
         }
         if (iUserService.checkAdminRole(user).isSuccess()) {
             return iCategoryService.getChildrenParallelCategory(categoryId);
@@ -67,10 +70,12 @@ public class CategoryManageController {
         }
     }
 
-    public ServerResponse<List<Category>> getCategoryAndDeepChildrenCategory(HttpSession session, @RequestParam(value = "categoryId",defaultValue = "0")Integer categoryId) {
+    @RequestMapping(value = "get_deep_category.do",method = RequestMethod.GET)
+    @ResponseBody
+    public ServerResponse<List<Integer>> getCategoryAndDeepChildrenCategory(HttpSession session, @RequestParam(value = "categoryId",defaultValue = "0")Integer categoryId) {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
-            return ServerResponse.createByErrorCodeMessage(10, "用户未登录，请登录");
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "用户未登录，请登录");
         }
         if (iUserService.checkAdminRole(user).isSuccess()) {
             return iCategoryService.selectCategoryAndChildrenById(categoryId);
