@@ -7,16 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bae7ca13-c3a2-41b6-8dfa-baf02eea4353" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/happymmall/controller/backend/ProductManageController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/happymmall/service/IProductService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/happymmall/service/impl/ProductServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/rest_test_mmall.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/happymmall/controller/portal/CategoryManageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/happymmall/controller/backend/CategoryManageController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/happymmall/service/ICategoryService.java" afterPath="$PROJECT_DIR$/src/main/java/com/happymmall/service/ICategoryService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/happymmall/service/impl/CategoryServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/happymmall/service/impl/CategoryServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/CategoryMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/CategoryMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mmall/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/mmall/META-INF/MANIFEST.MF" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1384,7 +1375,7 @@
       <workItem from="1507998538008" duration="1127000" />
       <workItem from="1508047720176" duration="29594000" />
       <workItem from="1508154553271" duration="12212000" />
-      <workItem from="1508292154029" duration="14303000" />
+      <workItem from="1508292154029" duration="14329000" />
     </task>
     <task id="LOCAL-00001" summary="try to fetch java folder">
       <created>1506700841603</created>
@@ -1435,11 +1426,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508233211643</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="finished category module">
+      <created>1508320851026</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1508320851026</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159939000" />
+    <option name="totallyTimeSpent" value="159965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
