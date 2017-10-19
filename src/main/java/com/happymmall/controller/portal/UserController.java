@@ -7,8 +7,6 @@ import com.happymmall.pojo.User;
 import com.happymmall.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -56,7 +54,7 @@ public class UserController {
     @RequestMapping(value = "check_vaild.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<String> checkVaild(String str, String type) {
-        return iUserService.checkVaild(str, type);
+        return iUserService.checkValid(str, type);
     }
 
     @RequestMapping(value = "get_user_info.do", method = RequestMethod.POST)

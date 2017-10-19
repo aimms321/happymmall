@@ -24,7 +24,6 @@ public class UserServiceImpl implements IUserService {
             return ServerResponse.createByErrorMessage("用户名不存在");
         }
         String md5Password = MD5Util.MD5EncodeUtf8(password);
-        //todo MD5密码登陆
         User user = userMapper.selectLogin(username, md5Password);
         if (user == null) {
             return ServerResponse.createByErrorMessage("密码错误");
@@ -34,12 +33,12 @@ public class UserServiceImpl implements IUserService {
     }
 
     public ServerResponse<String> register(User user) {
-        ServerResponse responseVaild = checkVaild(user.getUsername(), Const.USERNAME);
-        if (!responseVaild.isSuccess()) {
+        ServerResponse responseValid = checkValid(user.getUsername(), Const.USERNAME);
+        if (!responseValid.isSuccess()) {
             return ServerResponse.createByErrorMessage("用户名已存在");
         }
-        responseVaild = checkVaild(user.getEmail(), Const.EMAIL);
-        if (!responseVaild.isSuccess()) {
+        responseValid = checkValid(user.getEmail(), Const.EMAIL);
+        if (!responseValid.isSuccess()) {
             return ServerResponse.createByErrorMessage("Email已存在");
         }
         user.setRole(Const.Role.ROLE_CUSTOMER);
@@ -51,7 +50,7 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createBySuccessMessage("注册成功");
     }
 
-    public ServerResponse<String> checkVaild(String str, String type) {
+    public ServerResponse<String> checkValid(String str, String type) {
         if (StringUtils.isNotBlank(type)) {
             if (Const.USERNAME.equals(type)) {
                 int resultCount = userMapper.checkUsername(str);
@@ -72,7 +71,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     public ServerResponse<String> selectQuestion(String username) {
-        ServerResponse<String> vaildResponse = checkVaild(username, Const.USERNAME);
+        ServerResponse<String> vaildResponse = checkValid(username, Const.USERNAME);
         if (vaildResponse.isSuccess()) {
             return ServerResponse.createByErrorMessage("用户不存在");
         }
@@ -97,7 +96,7 @@ public class UserServiceImpl implements IUserService {
         if (StringUtils.isBlank(forgetToken)) {
             return ServerResponse.createByErrorMessage("参数错误，token需要传递");
         }
-        ServerResponse<String> vaildResponse = checkVaild(username, Const.USERNAME);
+        ServerResponse<String> vaildResponse = checkValid(username, Const.USERNAME);
         if (vaildResponse.isSuccess()) {
             return ServerResponse.createByErrorMessage("用户不存在");
         }
