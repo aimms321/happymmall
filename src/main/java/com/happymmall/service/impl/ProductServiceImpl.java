@@ -5,6 +5,7 @@ import com.happymmall.common.ServerResponse;
 import com.happymmall.dao.ProductMapper;
 import com.happymmall.pojo.Product;
 import com.happymmall.service.IProductService;
+import com.happymmall.util.PropertiesUtil;
 import com.happymmall.vo.ProductDetailVo;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,6 +68,26 @@ public class ProductServiceImpl implements IProductService {
         }
         ProductDetailVo productDetailVo = new ProductDetailVo();
 
+
+    }
+
+    private ProductDetailVo assembleProductVo(Product product) {
+        ProductDetailVo productDetailVo = new ProductDetailVo();
+        productDetailVo.setId(product.getId());
+        productDetailVo.setName(product.getName());
+        productDetailVo.setSubtitle(product.getSubtitle());
+        productDetailVo.setMainImage(product.getMainImage());
+        productDetailVo.setSubImages(product.getSubImages());
+        productDetailVo.setCategoryId(product.getCategoryId());
+        productDetailVo.setDetail(product.getDetail());
+        productDetailVo.setPrice(product.getPrice());
+        productDetailVo.setStock(product.getStock());
+        productDetailVo.setStatus(product.getStatus());
+        productDetailVo.setImageHost(PropertiesUtil.getProperty("ftp.server.http.prefix"));
+
+        //parentCategoryId
+        //createTime
+        //updateTime
 
     }
 }
