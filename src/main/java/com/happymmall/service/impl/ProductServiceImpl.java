@@ -1,15 +1,24 @@
 package com.happymmall.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.google.common.collect.Lists;
 import com.happymmall.common.ResponseCode;
 import com.happymmall.common.ServerResponse;
+import com.happymmall.dao.CategoryMapper;
 import com.happymmall.dao.ProductMapper;
+import com.happymmall.pojo.Category;
 import com.happymmall.pojo.Product;
 import com.happymmall.service.IProductService;
+import com.happymmall.util.DateTimeUtil;
 import com.happymmall.util.PropertiesUtil;
 import com.happymmall.vo.ProductDetailVo;
+import com.happymmall.vo.ProductListVo;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by user on 2017-10-18.
@@ -19,6 +28,9 @@ import org.springframework.stereotype.Service;
 public class ProductServiceImpl implements IProductService {
     @Autowired
     private ProductMapper productMapper;
+
+    @Autowired
+    private CategoryMapper categoryMapper;
     public ServerResponse saveOrUpdateProduct(Product product) {
         if (product != null) {
             if (StringUtils.isNotBlank(product.getSubImages())) {
@@ -58,7 +70,7 @@ public class ProductServiceImpl implements IProductService {
         return ServerResponse.createByErrorMessage("更改产品销售状态失败");
     }
 
-    public ServerResponse<Object> manageProductDetail(Integer productId) {
+    public ServerResponse<ProductDetailVo> manageProductDetail(Integer productId) {
         if (productId == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc());
         }
@@ -66,7 +78,8 @@ public class ProductServiceImpl implements IProductService {
         if (product == null) {
             return ServerResponse.createByErrorMessage("产品已下架或删除");
         }
-        ProductDetailVo productDetailVo = new ProductDetailVo();
+        ProductDetailVo productDetailVo = assembleProductVo(product);
+        return ServerResponse.createBySuccess(productDetailVo);
 
 
     }
@@ -86,9 +99,61 @@ public class ProductServiceImpl implements IProductService {
         productDetailVo.setImageHost(PropertiesUtil.getProperty("ftp.server.http.prefix"));
 
         //parentCategoryId
-        //createTime
-        //updateTime
+        Category category = categoryMapper.selectByPrimaryKey(product.getCategoryId());
+        if (category == null) {
+            productDetailVo.setParentCategoryId(0);
+        } else {
+            productDetailVo.setParentCategoryId(category.getParentId());
+        }
 
+        //createTime
+        productDetailVo.setCreateTime(DateTimeUtil.dateToStr(product.getCreateTime()));
+
+        //updateTime
+        productDetailVo.setUpdateTime(DateTimeUtil.dateToStr(product.getUpdateTime()));
+        return productDetailVo;
+    }
+
+    public ServerResponse getProductList(int pageNum, int pageSize) {
+        //startPage--start
+        //填充自己的sql查询逻辑
+        //pagehelper收尾
+        PageHelper.startPage(pageNum, pageSize);
+        List<Product> productList = productMapper.selectList();
+        List<ProductListVo> productListVoList= Lists.newArrayList();
+        for (Product productItem : productList) {
+            productListVoList.add(assembleProductListVo(productItem));
+        }
+        PageInfo pageResult = new PageInfo(productList);
+        pageResult.setList(productListVoList);
+        return ServerResponse.createBySuccess(pageResult);
+    }
+
+    private ProductListVo assembleProductListVo(Product product) {
+        ProductListVo productListVo = new ProductListVo();
+        productListVo.setId(product.getId());
+        productListVo.setName(product.getName());
+        productListVo.setSubtitle(product.getSubtitle());
+        productListVo.setMainImage(product.getMainImage());
+        productListVo.setPrice(product.getPrice());
+        productListVo.setStatus(product.getStatus());
+        productListVo.setImageHost(PropertiesUtil.getProperty("ftp.server.http.prefix"));
+        return productListVo;
+    }
+
+    public ServerResponse searchProduct(String productName,Integer productId,Integer pageNum,Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        if (StringUtils.isNotBlank(productName)) {
+            productName = new StringBuilder().append("%").append(productName).append("%").toString();
+        }
+        List<Product> productList = productMapper.selectByNameAndProductId(productName, productId);
+        List<ProductListVo> productListVoList = Lists.newArrayList();
+        for (Product productItem : productList) {
+            productListVoList.add(assembleProductListVo(productItem));
+        }
+        PageInfo pageResult = new PageInfo(productList);
+        pageResult.setList(productListVoList);
+        return ServerResponse.createBySuccess(pageResult);
     }
 }
 

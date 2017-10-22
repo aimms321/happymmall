@@ -10,8 +10,11 @@ import com.happymmall.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -66,9 +69,43 @@ public class ProductManageController {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "未登录");
         }
         if (iUserService.checkAdminRole(user).isSuccess()) {
-            // todo
+            return iProductService.manageProductDetail(productId);
         } else {
             return ServerResponse.createByErrorMessage("无权限操作，需要管理员");
         }
+    }
+
+    @RequestMapping("list.do")
+    @ResponseBody
+    public ServerResponse getList(HttpSession session, @RequestParam(value = "pageNum",defaultValue = "1")int pageNum, @RequestParam(value = "pageSize",defaultValue = "10")int pageSize) {
+
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if (user == null) {
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "未登录");
+        }
+        if (iUserService.checkAdminRole(user).isSuccess()) {
+            return iProductService.getProductList(pageNum,pageSize);
+        } else {
+            return ServerResponse.createByErrorMessage("无权限操作，需要管理员");
+        }
+    }
+
+    @RequestMapping("search.do")
+    @ResponseBody
+    public ServerResponse productSearch(HttpSession session,String productName,Integer productId, @RequestParam(value = "pageNum",defaultValue = "1")int pageNum, @RequestParam(value = "pageSize",defaultValue = "10")int pageSize) {
+
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if (user == null) {
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "未登录");
+        }
+        if (iUserService.checkAdminRole(user).isSuccess()) {
+            return iProductService.searchProduct(productName, productId,pageNum,pageSize);
+        } else {
+            return ServerResponse.createByErrorMessage("无权限操作，需要管理员");
+        }
+    }
+
+    public ServerResponse upload(MultipartFile file, HttpServletRequest request) {
+        String path = request.getSession().getServletContext().getRealPath("uplaod");
     }
 }
