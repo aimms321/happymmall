@@ -28,6 +28,7 @@ public class FTPUtil {
 
     public static boolean uploadFile(List<File> fileList) {
         FTPUtil ftpUtil = new FTPUtil(ftpIP, 21, ftpUser, ftpPass);
+        logger.info("开始连接FTP服务器");
     }
 
     private boolean uploadFile(String remotePath, List<File> fileList) {
