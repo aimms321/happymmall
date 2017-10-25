@@ -14,7 +14,7 @@ public class FileServiceImpl implements IFileService {
 
     private Logger logger = LoggerFactory.getLogger(FileServiceImpl.class);
 
-    public String upload(MultipartFile file, String path) {
+    public String upload(MultipartFile file, String path) {//path是servletContext中获得的上传文件的物理路径
         //将上传上来的文件名更改为随机的
         String fileName = file.getOriginalFilename();
         String fileExtensionName = fileName.substring(fileName.lastIndexOf("."));

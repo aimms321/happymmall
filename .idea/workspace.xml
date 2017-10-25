@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bae7ca13-c3a2-41b6-8dfa-baf02eea4353" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/happymmall/controller/backend/ProductManageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/happymmall/controller/backend/ProductManageController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/happymmall/service/impl/FileServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/happymmall/service/impl/FileServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/happymmall/util/FTPUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/happymmall/util/FTPUtil.java" />
     </list>
@@ -37,10 +36,9 @@
       <file leaf-file-name="ProductManageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/controller/backend/ProductManageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
+            <state relative-caret-position="1767">
               <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <marker date="1508831825534" expanded="true" signature="4269:4275" ph="{...}" />
               </folding>
             </state>
@@ -50,10 +48,9 @@
       <file leaf-file-name="ProductServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/service/impl/ProductServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
+            <state relative-caret-position="1311">
               <caret line="87" column="8" lean-forward="false" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <marker date="1508748458629" expanded="true" signature="6707:6713" ph="{...}" />
               </folding>
             </state>
@@ -63,9 +60,61 @@
       <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/pojo/Product.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
+            <state relative-caret-position="95">
               <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="26" selection-end-column="28" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1087#1088#0" expanded="false" />
+                <element signature="e#1110#1111#0" expanded="false" />
+                <element signature="e#1140#1141#0" expanded="false" />
+                <element signature="e#1165#1166#0" expanded="false" />
+                <element signature="e#1202#1203#0" expanded="false" />
+                <element signature="e#1230#1231#0" expanded="false" />
+                <element signature="e#1268#1269#0" expanded="false" />
+                <element signature="e#1301#1302#0" expanded="false" />
+                <element signature="e#1354#1355#0" expanded="false" />
+                <element signature="e#1398#1399#0" expanded="false" />
+                <element signature="e#1429#1430#0" expanded="false" />
+                <element signature="e#1456#1457#0" expanded="false" />
+                <element signature="e#1496#1497#0" expanded="false" />
+                <element signature="e#1557#1558#0" expanded="false" />
+                <element signature="e#1592#1593#0" expanded="false" />
+                <element signature="e#1623#1624#0" expanded="false" />
+                <element signature="e#1671#1672#0" expanded="false" />
+                <element signature="e#1744#1745#0" expanded="false" />
+                <element signature="e#1780#1781#0" expanded="false" />
+                <element signature="e#1812#1813#0" expanded="false" />
+                <element signature="e#1862#1863#0" expanded="false" />
+                <element signature="e#1938#1939#0" expanded="false" />
+                <element signature="e#1974#1975#0" expanded="false" />
+                <element signature="e#2006#2007#0" expanded="false" />
+                <element signature="e#2056#2057#0" expanded="false" />
+                <element signature="e#2132#2133#0" expanded="false" />
+                <element signature="e#2165#2166#0" expanded="false" />
+                <element signature="e#2194#2195#0" expanded="false" />
+                <element signature="e#2238#2239#0" expanded="false" />
+                <element signature="e#2305#2306#0" expanded="false" />
+                <element signature="e#2341#2342#0" expanded="false" />
+                <element signature="e#2369#2370#0" expanded="false" />
+                <element signature="e#2415#2416#0" expanded="false" />
+                <element signature="e#2449#2450#0" expanded="false" />
+                <element signature="e#2482#2483#0" expanded="false" />
+                <element signature="e#2510#2511#0" expanded="false" />
+                <element signature="e#2553#2554#0" expanded="false" />
+                <element signature="e#2587#2588#0" expanded="false" />
+                <element signature="e#2621#2622#0" expanded="false" />
+                <element signature="e#2650#2651#0" expanded="false" />
+                <element signature="e#2695#2696#0" expanded="false" />
+                <element signature="e#2731#2732#0" expanded="false" />
+                <element signature="e#2766#2767#0" expanded="false" />
+                <element signature="e#2799#2800#0" expanded="false" />
+                <element signature="e#2849#2850#0" expanded="false" />
+                <element signature="e#2893#2894#0" expanded="false" />
+                <element signature="e#2928#2929#0" expanded="false" />
+                <element signature="e#2961#2962#0" expanded="false" />
+                <element signature="e#3011#3012#0" expanded="false" />
+                <element signature="e#3055#3056#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,16 +124,73 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1501">
               <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#584#585#0" expanded="false" />
+                <element signature="e#609#610#0" expanded="false" />
+                <element signature="e#646#647#0" expanded="false" />
+                <element signature="e#674#675#0" expanded="false" />
+                <element signature="e#712#713#0" expanded="false" />
+                <element signature="e#745#746#0" expanded="false" />
+                <element signature="e#798#799#0" expanded="false" />
+                <element signature="e#842#843#0" expanded="false" />
+                <element signature="e#873#874#0" expanded="false" />
+                <element signature="e#900#901#0" expanded="false" />
+                <element signature="e#940#941#0" expanded="false" />
+                <element signature="e#972#973#0" expanded="false" />
+                <element signature="e#1007#1008#0" expanded="false" />
+                <element signature="e#1038#1039#0" expanded="false" />
+                <element signature="e#1086#1087#0" expanded="false" />
+                <element signature="e#1126#1127#0" expanded="false" />
+                <element signature="e#1162#1163#0" expanded="false" />
+                <element signature="e#1194#1195#0" expanded="false" />
+                <element signature="e#1244#1245#0" expanded="false" />
+                <element signature="e#1286#1287#0" expanded="false" />
+                <element signature="e#1322#1323#0" expanded="false" />
+                <element signature="e#1354#1355#0" expanded="false" />
+                <element signature="e#1404#1405#0" expanded="false" />
+                <element signature="e#1446#1447#0" expanded="false" />
+                <element signature="e#1479#1480#0" expanded="false" />
+                <element signature="e#1508#1509#0" expanded="false" />
+                <element signature="e#1552#1553#0" expanded="false" />
+                <element signature="e#1588#1589#0" expanded="false" />
+                <element signature="e#1624#1625#0" expanded="false" />
+                <element signature="e#1652#1653#0" expanded="false" />
+                <element signature="e#1698#1699#0" expanded="false" />
+                <element signature="e#1732#1733#0" expanded="false" />
+                <element signature="e#1765#1766#0" expanded="false" />
+                <element signature="e#1793#1794#0" expanded="false" />
+                <element signature="e#1836#1837#0" expanded="false" />
+                <element signature="e#1870#1871#0" expanded="false" />
+                <element signature="e#1904#1905#0" expanded="false" />
+                <element signature="e#1933#1934#0" expanded="false" />
+                <element signature="e#1978#1979#0" expanded="false" />
+                <element signature="e#2014#2015#0" expanded="false" />
+                <element signature="e#2051#2052#0" expanded="false" />
+                <element signature="e#2084#2085#0" expanded="false" />
+                <element signature="e#2136#2137#0" expanded="false" />
+                <element signature="e#2180#2181#0" expanded="false" />
+                <element signature="e#2217#2218#0" expanded="false" />
+                <element signature="e#2250#2251#0" expanded="false" />
+                <element signature="e#2302#2303#0" expanded="false" />
+                <element signature="e#2346#2347#0" expanded="false" />
+                <element signature="e#2382#2383#0" expanded="false" />
+                <element signature="e#2414#2415#0" expanded="false" />
+                <element signature="e#2464#2465#0" expanded="false" />
+                <element signature="e#2506#2507#0" expanded="false" />
+                <element signature="e#2550#2551#0" expanded="false" />
+                <element signature="e#2589#2590#0" expanded="false" />
+                <element signature="e#2654#2655#0" expanded="false" />
+                <element signature="e#2710#2711#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FTPUtil.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FTPUtil.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/util/FTPUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="956">
-              <caret line="55" column="34" lean-forward="true" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+            <state relative-caret-position="405">
+              <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,8 +202,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/util/PropertiesUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="665">
-              <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-              <folding />
+              <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,10 +215,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
               <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-              <folding>
-                <element signature="e#437#438#0" expanded="false" />
-                <element signature="e#464#465#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,18 +225,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
               <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FileServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/service/impl/FileServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="40" column="36" lean-forward="false" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+            <state relative-caret-position="323">
+              <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -221,9 +324,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/happymmall/service/IFileService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/happymmall/service/impl/FielServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mmall.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/happymmall/util/FTPUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/happymmall/controller/backend/ProductManageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/happymmall/service/impl/FileServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/happymmall/util/FTPUtil.java" />
       </list>
     </option>
   </component>
@@ -322,8 +425,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1474,7 +1577,8 @@
       <workItem from="1508379096616" duration="15673000" />
       <workItem from="1508465617388" duration="10174000" />
       <workItem from="1508648394933" duration="22279000" />
-      <workItem from="1508820776496" duration="13647000" />
+      <workItem from="1508820776496" duration="13776000" />
+      <workItem from="1508896514875" duration="17181000" />
     </task>
     <task id="LOCAL-00001" summary="try to fetch java folder">
       <created>1506700841603</created>
@@ -1546,14 +1650,21 @@
       <option name="project" value="LOCAL" />
       <updated>1508407701376</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="coding product manage module">
+      <created>1508840464424</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1508840464424</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235461000" />
+    <option name="totallyTimeSpent" value="252771000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1578,7 +1689,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66448444" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21331316" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21633889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1817,17 +1928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/common/ResponseCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding>
-            <element signature="e#437#438#0" expanded="false" />
-            <element signature="e#464#465#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/jdk1.8.0_121/src.zip!/java/io/InputStreamReader.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/util/PropertiesUtilTry.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/service/impl/UserServiceImpl.java">
@@ -1917,16 +2017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/service/IProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/vo/ProductListVo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1953,24 +2043,82 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1501">
           <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#584#585#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#646#647#0" expanded="false" />
+            <element signature="e#674#675#0" expanded="false" />
+            <element signature="e#712#713#0" expanded="false" />
+            <element signature="e#745#746#0" expanded="false" />
+            <element signature="e#798#799#0" expanded="false" />
+            <element signature="e#842#843#0" expanded="false" />
+            <element signature="e#873#874#0" expanded="false" />
+            <element signature="e#900#901#0" expanded="false" />
+            <element signature="e#940#941#0" expanded="false" />
+            <element signature="e#972#973#0" expanded="false" />
+            <element signature="e#1007#1008#0" expanded="false" />
+            <element signature="e#1038#1039#0" expanded="false" />
+            <element signature="e#1086#1087#0" expanded="false" />
+            <element signature="e#1126#1127#0" expanded="false" />
+            <element signature="e#1162#1163#0" expanded="false" />
+            <element signature="e#1194#1195#0" expanded="false" />
+            <element signature="e#1244#1245#0" expanded="false" />
+            <element signature="e#1286#1287#0" expanded="false" />
+            <element signature="e#1322#1323#0" expanded="false" />
+            <element signature="e#1354#1355#0" expanded="false" />
+            <element signature="e#1404#1405#0" expanded="false" />
+            <element signature="e#1446#1447#0" expanded="false" />
+            <element signature="e#1479#1480#0" expanded="false" />
+            <element signature="e#1508#1509#0" expanded="false" />
+            <element signature="e#1552#1553#0" expanded="false" />
+            <element signature="e#1588#1589#0" expanded="false" />
+            <element signature="e#1624#1625#0" expanded="false" />
+            <element signature="e#1652#1653#0" expanded="false" />
+            <element signature="e#1698#1699#0" expanded="false" />
+            <element signature="e#1732#1733#0" expanded="false" />
+            <element signature="e#1765#1766#0" expanded="false" />
+            <element signature="e#1793#1794#0" expanded="false" />
+            <element signature="e#1836#1837#0" expanded="false" />
+            <element signature="e#1870#1871#0" expanded="false" />
+            <element signature="e#1904#1905#0" expanded="false" />
+            <element signature="e#1933#1934#0" expanded="false" />
+            <element signature="e#1978#1979#0" expanded="false" />
+            <element signature="e#2014#2015#0" expanded="false" />
+            <element signature="e#2051#2052#0" expanded="false" />
+            <element signature="e#2084#2085#0" expanded="false" />
+            <element signature="e#2136#2137#0" expanded="false" />
+            <element signature="e#2180#2181#0" expanded="false" />
+            <element signature="e#2217#2218#0" expanded="false" />
+            <element signature="e#2250#2251#0" expanded="false" />
+            <element signature="e#2302#2303#0" expanded="false" />
+            <element signature="e#2346#2347#0" expanded="false" />
+            <element signature="e#2382#2383#0" expanded="false" />
+            <element signature="e#2414#2415#0" expanded="false" />
+            <element signature="e#2464#2465#0" expanded="false" />
+            <element signature="e#2506#2507#0" expanded="false" />
+            <element signature="e#2550#2551#0" expanded="false" />
+            <element signature="e#2589#2590#0" expanded="false" />
+            <element signature="e#2654#2655#0" expanded="false" />
+            <element signature="e#2710#2711#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/util/PropertiesUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
-          <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-          <folding />
+          <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/service/impl/ProductServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
+        <state relative-caret-position="1311">
           <caret line="87" column="8" lean-forward="false" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
             <marker date="1508748458629" expanded="true" signature="6707:6713" ph="{...}" />
           </folding>
         </state>
@@ -1978,38 +2126,105 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/pojo/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
+        <state relative-caret-position="95">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="26" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/util/FTPUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="956">
-          <caret line="55" column="34" lean-forward="true" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1087#1088#0" expanded="false" />
+            <element signature="e#1110#1111#0" expanded="false" />
+            <element signature="e#1140#1141#0" expanded="false" />
+            <element signature="e#1165#1166#0" expanded="false" />
+            <element signature="e#1202#1203#0" expanded="false" />
+            <element signature="e#1230#1231#0" expanded="false" />
+            <element signature="e#1268#1269#0" expanded="false" />
+            <element signature="e#1301#1302#0" expanded="false" />
+            <element signature="e#1354#1355#0" expanded="false" />
+            <element signature="e#1398#1399#0" expanded="false" />
+            <element signature="e#1429#1430#0" expanded="false" />
+            <element signature="e#1456#1457#0" expanded="false" />
+            <element signature="e#1496#1497#0" expanded="false" />
+            <element signature="e#1557#1558#0" expanded="false" />
+            <element signature="e#1592#1593#0" expanded="false" />
+            <element signature="e#1623#1624#0" expanded="false" />
+            <element signature="e#1671#1672#0" expanded="false" />
+            <element signature="e#1744#1745#0" expanded="false" />
+            <element signature="e#1780#1781#0" expanded="false" />
+            <element signature="e#1812#1813#0" expanded="false" />
+            <element signature="e#1862#1863#0" expanded="false" />
+            <element signature="e#1938#1939#0" expanded="false" />
+            <element signature="e#1974#1975#0" expanded="false" />
+            <element signature="e#2006#2007#0" expanded="false" />
+            <element signature="e#2056#2057#0" expanded="false" />
+            <element signature="e#2132#2133#0" expanded="false" />
+            <element signature="e#2165#2166#0" expanded="false" />
+            <element signature="e#2194#2195#0" expanded="false" />
+            <element signature="e#2238#2239#0" expanded="false" />
+            <element signature="e#2305#2306#0" expanded="false" />
+            <element signature="e#2341#2342#0" expanded="false" />
+            <element signature="e#2369#2370#0" expanded="false" />
+            <element signature="e#2415#2416#0" expanded="false" />
+            <element signature="e#2449#2450#0" expanded="false" />
+            <element signature="e#2482#2483#0" expanded="false" />
+            <element signature="e#2510#2511#0" expanded="false" />
+            <element signature="e#2553#2554#0" expanded="false" />
+            <element signature="e#2587#2588#0" expanded="false" />
+            <element signature="e#2621#2622#0" expanded="false" />
+            <element signature="e#2650#2651#0" expanded="false" />
+            <element signature="e#2695#2696#0" expanded="false" />
+            <element signature="e#2731#2732#0" expanded="false" />
+            <element signature="e#2766#2767#0" expanded="false" />
+            <element signature="e#2799#2800#0" expanded="false" />
+            <element signature="e#2849#2850#0" expanded="false" />
+            <element signature="e#2893#2894#0" expanded="false" />
+            <element signature="e#2928#2929#0" expanded="false" />
+            <element signature="e#2961#2962#0" expanded="false" />
+            <element signature="e#3011#3012#0" expanded="false" />
+            <element signature="e#3055#3056#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/controller/backend/ProductManageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
+        <state relative-caret-position="1767">
           <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <marker date="1508831825534" expanded="true" signature="4269:4275" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/service/IProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/common/ResponseCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/service/impl/FileServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="40" column="36" lean-forward="false" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+        <state relative-caret-position="323">
+          <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/happymmall/util/FTPUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
