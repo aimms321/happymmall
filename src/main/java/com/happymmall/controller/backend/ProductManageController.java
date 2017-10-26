@@ -1,12 +1,17 @@
 package com.happymmall.controller.backend;
 
+import com.google.common.collect.Maps;
 import com.happymmall.common.Const;
 import com.happymmall.common.ResponseCode;
 import com.happymmall.common.ServerResponse;
 import com.happymmall.pojo.Product;
 import com.happymmall.pojo.User;
+import com.happymmall.service.IFileService;
 import com.happymmall.service.IProductService;
 import com.happymmall.service.IUserService;
+import com.happymmall.util.PropertiesUtil;
+import com.sun.deploy.net.HttpResponse;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Map;
 
 /**
  * Created by user on 2017-10-18.
@@ -29,6 +35,8 @@ public class ProductManageController {
     private IUserService iUserService;
     @Autowired
     private IProductService iProductService;
+    @Autowired
+    private IFileService iFileService;
 
     @RequestMapping("save.do")
     @ResponseBody
@@ -105,7 +113,55 @@ public class ProductManageController {
         }
     }
 
-    public ServerResponse upload(MultipartFile file, HttpServletRequest request) {
+    @RequestMapping("upload.do")
+    @ResponseBody
+    public ServerResponse upload(HttpSession session,@RequestParam(value="upload_file",required = false)MultipartFile file, HttpServletRequest request) {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if (user == null) {
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "未登录");
+        }
+        if (iUserService.checkAdminRole(user).isSuccess()) {
+            String path = request.getSession().getServletContext().getRealPath("upload");
+            String fileName = iFileService.upload(file, path);
+            String url = PropertiesUtil.getProperty("ftp.server.http.prefix") + fileName;
+            Map fileMap = Maps.newHashMap();
+            fileMap.put("uri", fileName);
+            fileMap.put("url", url);
+            return ServerResponse.createBySuccess(fileMap);
+        } else {
+            return ServerResponse.createByErrorMessage("无权限操作，需要管理员");
+        }
+    }
 
+    @RequestMapping("richtext_img_upload.do")
+    @ResponseBody
+    public Map richtextImgUpload(HttpSession session, @RequestParam(value="upload_file",required = false)MultipartFile file, HttpServletRequest request, HttpResponse response) {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        Map resultMap = Maps.newHashMap();
+        if (user == null) {
+            resultMap.put("success", false);
+            resultMap.put("msg", "请登录管理员");
+            return resultMap;
+        }
+        if (iUserService.checkAdminRole(user).isSuccess()) {
+            String path = request.getSession().getServletContext().getRealPath("upload");
+            String fileName = iFileService.upload(file,path);
+            if (StringUtils.isBlank(fileName)) {
+                resultMap.put("success", false);
+                resultMap.put("msg", "上传失败");
+                return resultMap;
+            }
+            String url = PropertiesUtil.getProperty("ftp.server.http.prefix") + fileName;
+            resultMap.put("success", true);
+            resultMap.put("msg", "上传成功");
+            resultMap.put("file_path", url);
+            response.
+
+            return ServerResponse.createBySuccess(fileMap);
+        } else {
+            resultMap.put("success", false);
+            resultMap.put("msg", "无权限操作");
+            return resultMap;
+        }
     }
 }

@@ -1,15 +1,18 @@
 package com.happymmall.service.impl;
 
+import com.google.common.collect.Lists;
 import com.happymmall.service.IFileService;
+import com.happymmall.util.FTPUtil;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
-
+@Service("iFileService")
 public class FileServiceImpl implements IFileService {
 
     private Logger logger = LoggerFactory.getLogger(FileServiceImpl.class);
@@ -33,8 +36,9 @@ public class FileServiceImpl implements IFileService {
         //将上传的文件数据复制到新创建的更名文件中
         try {
             file.transferTo(targetFile);
-            //todo 将文件上传到FTP服务器上
-            //todo 将文件删除
+            FTPUtil.uploadFile(Lists.newArrayList(targetFile));
+            targetFile.delete();
+
         } catch (IOException e) {
             logger.error("上传文件异常", e);
         }
