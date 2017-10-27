@@ -20,7 +20,7 @@ public class FileServiceImpl implements IFileService {
     public String upload(MultipartFile file, String path) {//path是servletContext中获得的上传文件的物理路径
         //将上传上来的文件名更改为随机的
         String fileName = file.getOriginalFilename();
-        String fileExtensionName = fileName.substring(fileName.lastIndexOf("."));
+        String fileExtensionName = fileName.substring(fileName.lastIndexOf(".")+1);
         String uploadFileName = UUID.randomUUID().toString() + "." + fileExtensionName;
         //LOGGER记录上传的文件信息
         logger.info("开始上传文件，上传文件的文件名：{}，上传的路径为{} ，新文件名：{}",fileName,path,uploadFileName);
@@ -34,6 +34,7 @@ public class FileServiceImpl implements IFileService {
         //创建更名后的文件
         File targetFile = new File("upload", uploadFileName);
         //将上传的文件数据复制到新创建的更名文件中
+        logger.info("文件流复制到新创建的随机名文件成功");
         try {
             file.transferTo(targetFile);
             FTPUtil.uploadFile(Lists.newArrayList(targetFile));

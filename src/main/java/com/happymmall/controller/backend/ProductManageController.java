@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
 
@@ -135,7 +136,7 @@ public class ProductManageController {
 
     @RequestMapping("richtext_img_upload.do")
     @ResponseBody
-    public Map richtextImgUpload(HttpSession session, @RequestParam(value="upload_file",required = false)MultipartFile file, HttpServletRequest request, HttpResponse response) {
+    public Map richtextImgUpload(HttpSession session, @RequestParam(value="upload_file",required = false)MultipartFile file, HttpServletRequest request, HttpServletResponse response) {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         Map resultMap = Maps.newHashMap();
         if (user == null) {
@@ -155,9 +156,8 @@ public class ProductManageController {
             resultMap.put("success", true);
             resultMap.put("msg", "上传成功");
             resultMap.put("file_path", url);
-            response.
-
-            return ServerResponse.createBySuccess(fileMap);
+            response.addHeader("Access-Control-Allow-Headers","X-File-Name");
+            return resultMap;
         } else {
             resultMap.put("success", false);
             resultMap.put("msg", "无权限操作");
