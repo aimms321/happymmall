@@ -34,9 +34,10 @@ public class FTPUtil {
     private boolean uploadFile(String remotePath, List<File> fileList) throws IOException {
         boolean uploaded = true;//默认值是true
         FileInputStream fis = null;
+        logger.info("正在尝试连接FTP服务器");
         if (connectServer(this.ip, this.port, this.user, this.pwd)) {
+            logger.info("ftp服务器连接成功");
             try {
-
                 ftpClient.changeWorkingDirectory(remotePath);
                 ftpClient.setBufferSize(1024);
                 ftpClient.setControlEncoding("UTF-8");

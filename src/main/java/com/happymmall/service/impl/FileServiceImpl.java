@@ -25,14 +25,14 @@ public class FileServiceImpl implements IFileService {
         //LOGGER记录上传的文件信息
         logger.info("开始上传文件，上传文件的文件名：{}，上传的路径为{} ，新文件名：{}",fileName,path,uploadFileName);
         //创建WEBINFO下的临时上传文件夹
-        File fileDir = new File("upload");
+        File fileDir = new File(path);
         //判断文件夹是否存在
         if (!fileDir.exists()) {
             fileDir.setWritable(true); //将文件夹设置为可写
             fileDir.mkdirs();//创建文件夹
         }
         //创建更名后的文件
-        File targetFile = new File("upload", uploadFileName);
+        File targetFile = new File(path, uploadFileName);
         //将上传的文件数据复制到新创建的更名文件中
         logger.info("文件流复制到新创建的随机名文件成功");
         try {
