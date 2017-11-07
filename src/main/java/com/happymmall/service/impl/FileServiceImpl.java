@@ -29,7 +29,7 @@ public class FileServiceImpl implements IFileService {
         //判断文件夹是否存在
         if (!fileDir.exists()) {
             fileDir.setWritable(true); //将文件夹设置为可写
-            fileDir.mkdirs();//创建文件夹
+            fileDir.mkdirs();//创建文件夹con
         }
         //创建更名后的文件
         File targetFile = new File(path, uploadFileName);
