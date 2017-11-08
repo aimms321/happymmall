@@ -10,6 +10,7 @@ import com.happymmall.dao.CategoryMapper;
 import com.happymmall.dao.ProductMapper;
 import com.happymmall.pojo.Category;
 import com.happymmall.pojo.Product;
+import com.happymmall.service.ICategoryService;
 import com.happymmall.service.IProductService;
 import com.happymmall.util.DateTimeUtil;
 import com.happymmall.util.PropertiesUtil;
@@ -32,6 +33,10 @@ public class ProductServiceImpl implements IProductService {
 
     @Autowired
     private CategoryMapper categoryMapper;
+
+    @Autowired
+    private ICategoryService iCategoryService;
+
     public ServerResponse saveOrUpdateProduct(Product product) {
         if (product != null) {
             if (StringUtils.isNotBlank(product.getSubImages())) {
@@ -176,6 +181,7 @@ public class ProductServiceImpl implements IProductService {
         if (StringUtils.isBlank(keyword) && categoryId == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc());
         }
+        List<Category> categoryList = Lists.newArrayList();
         if (categoryId != null) {
             Category category = categoryMapper.selectByPrimaryKey(categoryId);
             if (category == null && StringUtils.isBlank(keyword)) {//没有查询到该分类，而且关键字也为空,则创建一个空的集合并返回
@@ -184,7 +190,10 @@ public class ProductServiceImpl implements IProductService {
                 PageInfo pageInfo = new PageInfo(productListVoList);
                 return ServerResponse.createBySuccess(pageInfo);
             }
+            categoryList = iCategoryService.selectCategoryAndChildrenById();
+
         }
+
     }
 }
 
